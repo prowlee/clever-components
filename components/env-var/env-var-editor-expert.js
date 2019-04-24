@@ -1,11 +1,7 @@
 import '../atoms/cc-input-text.js';
 import envVarUtils from '../lib/env-vars.js';
-import { dispatchCustomEvent } from '../lib/events.js';
 import { css, html, LitElement } from 'lit-element';
-
-const varsAsText = Symbol();
-const errors = Symbol();
-const formattedErrors = Symbol();
+import { dispatchCustomEvent } from '../lib/events.js';
 
 /**
  * A high level env var editor, edit all vars at once with a big string that is parsed and provides error messages
@@ -15,14 +11,15 @@ const formattedErrors = Symbol();
  * @event env-var-editor-expert:change - TODO
  *
  * @prop {Array} variables - TODO
+ * @prop {Array} _variablesAsText - TODO
  */
 export class EnvVarEditorExpert extends LitElement {
 
   static get properties () {
     return {
       variables: { type: Array, attribute: false },
-      [varsAsText]: { type: Array, attribute: false },
-      [formattedErrors]: { type: Array, attribute: false },
+      _variablesAsText: { type: Array, attribute: false },
+      _formattedErrors: { type: Array, attribute: false },
     };
   }
 
@@ -37,6 +34,7 @@ export class EnvVarEditorExpert extends LitElement {
       :host {
         display: block;
       }
+
       :host([hidden]) {
         display: none;
       }
@@ -46,12 +44,12 @@ export class EnvVarEditorExpert extends LitElement {
   set variables (variables) {
     const filteredVariables = variables
       .filter(({ isDeleted }) => !isDeleted);
-    this[varsAsText] = envVarUtils.toNameEqualsValueString(filteredVariables);
-    this.setErrors([]);
+    this._variablesAsText = envVarUtils.toNameEqualsValueString(filteredVariables);
+    this._errors = [];
   }
 
-  setErrors (rawErrors) {
-    this[formattedErrors] = rawErrors.map(({ type, name, pos }) => {
+  set _errors (rawErrors) {
+    this._formattedErrors = rawErrors.map(({ type, name, pos }) => {
       if (type === envVarUtils.ERROR_TYPES.INVALID_NAME) {
         return {
           line: pos.line,
@@ -84,22 +82,22 @@ export class EnvVarEditorExpert extends LitElement {
     return html`
       <cc-input-text
         multi
-        .value="${this[varsAsText]}"
-        @cc-input-text:input=${this.inputHandler}
+        .value="${this._variablesAsText}"
+        @cc-input-text:input=${this._inputHandler}
       ></cc-input-text>
       
-      <ul ?hidden="${this[formattedErrors].length === 0}">
-        ${this[formattedErrors].map(({ line, msg }) => html`
+      <ul ?hidden="${this._formattedErrors.length === 0}">
+        ${this._formattedErrors.map(({ line, msg }) => html`
           <li><strong>line ${line}:</strong> ${msg}</li>
         `)}
       </ul>
-      <div ?hidden="${this[formattedErrors].length > 0}">no errors</div>
+      <div ?hidden="${this._formattedErrors.length > 0}">no errors</div>
     `;
   }
 
-  inputHandler ({ detail }) {
+  _inputHandler ({ detail }) {
     const { variables, errors } = envVarUtils.parseRaw(detail.value);
-    this.setErrors(errors);
+    this._errors = errors;
     if (errors.length === 0) {
       dispatchCustomEvent(this, 'change', variables);
     }

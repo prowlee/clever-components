@@ -111,8 +111,8 @@ export class EnvVarInput extends LitElement {
   render () {
 
     const buttons = this.isDeleted
-      ? html`<cc-button @click=${this.keepHandler}>${this.constructor.i18n.keepButton}</cc-button>`
-      : html`<cc-button danger outlined @click=${this.deleteHandler}>${this.constructor.i18n.deleteButton}</cc-button>`;
+      ? html`<cc-button @click=${this._keepHandler}>${this.constructor.i18n.keepButton}</cc-button>`
+      : html`<cc-button danger outlined @click=${this._deleteHandler}>${this.constructor.i18n.deleteButton}</cc-button>`;
 
     return html`
       <span class="label">
@@ -126,23 +126,23 @@ export class EnvVarInput extends LitElement {
           name=${this.name}
           ?disabled=${this.isDeleted}
           .placeholder=${this.constructor.i18n.valuePlaceholder}
-          @input=${this.inputHandler}
+          @input=${this._inputHandler}
         ></cc-input-text>
         ${buttons}
       </span>
     `;
   }
 
-  inputHandler (e) {
+  _inputHandler (e) {
     this.value = e.target.value;
     this.isValid = dispatchCustomEvent(this, 'input', { name: this.name, value: this.value });
   }
 
-  deleteHandler () {
+  _deleteHandler () {
     dispatchCustomEvent(this, 'delete', { name: this.name });
   }
 
-  keepHandler () {
+  _keepHandler () {
     dispatchCustomEvent(this, 'keep', { name: this.name });
   }
 }

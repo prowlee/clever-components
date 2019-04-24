@@ -5,16 +5,18 @@ const del = require('del');
 const fs = require('fs-extra');
 const path = require('path');
 const rawGlob = require('glob');
+const Terser = require('terser');
 const util = require('util');
 
 const glob = util.promisify(rawGlob);
 
-const Terser = require('terser');
-
+// Minify HTML inside lit-html and LitElement html`` templates
+// Minify CSS inside LitElement css`` templates
 function minifyHtmlCss (code, sourceFileName) {
   return babel.transformSync(code, {
-    sourceMaps: 'inline',
     sourceFileName,
+    // Put sourcemap in the file to simplify further manipulation
+    sourceMaps: 'inline',
     'plugins': [
       [
         'template-html-minifier',
@@ -35,7 +37,7 @@ function minifyHtmlCss (code, sourceFileName) {
         },
       ],
     ],
-  }).code;
+  });
 }
 
 function minifyJs (code, sourceMapUrl) {
@@ -62,11 +64,10 @@ async function run () {
   const sourceFilepaths = await glob('./components/**/*.js');
 
   const filepaths = sourceFilepaths.map((src) => {
+    // this seems to get better integration in browsers
     const sourceMapFilename = src.replace('/components/', '/node_modules/@clever/components/');
-    console.log({sourceMapFilename})
     const dst = src.replace('/components/', '/dist/');
-    const { base: sourceMapBase } = path.parse(dst);
-    const sourceMapUrl = sourceMapBase + '.map';
+    const sourceMapUrl = path.parse(dst).base + '.map';
     return { src, sourceMapFilename, dst, sourceMapUrl };
   });
 
@@ -74,12 +75,12 @@ async function run () {
     console.log(`Minifying ${src} ...`);
     await fs.readFile(src, 'utf8')
       .then((code) => minifyHtmlCss(code, sourceMapFilename))
-      .then((code) => minifyJs(code, sourceMapUrl))
+      .then(({ code }) => minifyJs(code, sourceMapUrl))
       .then(async ({ code, map }) => {
         await fs.outputFile(dst, code);
         await fs.outputFile(dst + '.map', map);
       });
-    console.log(`Minifying ${src} DONE ${dst}`);
+    console.log(`   DONE! ${dst}`);
   }
 }
 

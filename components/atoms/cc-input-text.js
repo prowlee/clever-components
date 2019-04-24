@@ -165,7 +165,7 @@ export class CcInputText extends LitElement {
 
   // Stop propagation of keydown events (to prevent conflicts with shortcuts)
   _stopPropagation (e) {
-    e._stopPropagation();
+    e.stopPropagation();
   }
 
   _focusHandler (e) {

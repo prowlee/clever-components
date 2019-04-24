@@ -3,7 +3,7 @@ import notes from '../../.components-docs/env-var-input.md';
 import { storiesOf } from '@storybook/html';
 import { withCustomEventActions } from '../lib/even-action';
 
-const eventNames = ['env-var-input:input', 'env-var-input:delete', 'env-var-input:undelete'];
+const eventNames = ['env-var-input:input', 'env-var-input:delete', 'env-var-input:keep'];
 
 storiesOf('env-var/<env-var-input>', module)
   .add('all', () => withCustomEventActions(...eventNames)(() => `

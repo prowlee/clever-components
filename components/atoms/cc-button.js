@@ -1,5 +1,5 @@
-import { css, html, LitElement } from 'lit-element';
 import { classMap } from 'lit-html/directives/class-map.js';
+import { css, html, LitElement } from 'lit-element';
 
 /**
  * Simple button for Clever Cloud
@@ -38,10 +38,10 @@ export class CcButton extends LitElement {
       :host {
         box-sizing: border-box;
         display: inline-block;
-        padding: 0.2rem;
+        margin: 0.2rem;
         vertical-align: top;
       }
-      
+
       /* RESET */
       button {
         background: #fff;
@@ -51,7 +51,7 @@ export class CcButton extends LitElement {
         margin: 0;
         padding: 0;
       }
-      
+
       /* BASE */
       button {
         border-radius: 0.15rem;
@@ -71,12 +71,15 @@ export class CcButton extends LitElement {
       button.simple {
         --btn-color: hsl(210, 23%, 26%);
       }
+
       button.primary {
         --btn-color: hsl(213, 55%, 62%);
       }
+
       button.success {
         --btn-color: hsl(144, 56%, 43%);
       }
+
       button.danger {
         --btn-color: hsl(351, 70%, 47%);
       }
@@ -87,10 +90,12 @@ export class CcButton extends LitElement {
         border-color: var(--btn-color);
         color: #fff;
       }
+
       button.outlined {
         background-color: #fff;
         color: var(--btn-color);
       }
+
       /* special case: we want to keep simple buttons subtle */
       button.simple {
         border-color: #aaa;
@@ -101,35 +106,32 @@ export class CcButton extends LitElement {
         box-shadow: 0 0 0 .2em rgba(50, 115, 220, .25);
         outline: 0;
       }
+
       button:enabled:hover {
         box-shadow: 0 1px 3px #888;
       }
+
       button:enabled:active {
         box-shadow: none;
         outline: 0;
       }
+
       button:disabled {
         cursor: default;
         opacity: .5;
       }
-      
+
       /* TRANSITIONS */
       button {
         box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
         transition: all 75ms ease-in-out;
       }
-      
+
       /* We can do this because we set a visible focus state */
       button::-moz-focus-inner {
         border: 0;
       }
     `;
-  }
-
-  _stopPropagationIfDisabled (e) {
-    if (this.disabled) {
-      e.stopPropagation();
-    }
   }
 
   render () {
@@ -152,7 +154,6 @@ export class CcButton extends LitElement {
       type="button"
       class=${classMap(modes)}
       .disabled="${this.disabled}"
-      @click="${this._stopPropagationIfDisabled}"
     >
       <slot></slot>
     </button>`;

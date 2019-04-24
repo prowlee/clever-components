@@ -13,16 +13,13 @@ const i18n = initI18n({
   'env-var-create.errors.already-defined-name': ({ name }) => html`Name <code>${name}</code> is already defined`,
 });
 
-const variableName = Symbol();
-const variableValue = Symbol();
-
 export class EnvVarCreate extends LitElement {
 
   static get properties () {
     return {
       variablesNames: { type: Array, attribute: false },
-      [variableName]: { type: String, attribute: false },
-      [variableValue]: { type: String, attribute: false },
+      _variableName: { type: String, attribute: false },
+      _variableValue: { type: String, attribute: false },
     };
   }
 
@@ -38,6 +35,7 @@ export class EnvVarCreate extends LitElement {
       :host {
         display: block;
       }
+
       .wrapper {
         display: flex;
         flex-wrap: wrap;
@@ -45,18 +43,22 @@ export class EnvVarCreate extends LitElement {
         padding: 0rem;
         width: 100%
       }
+
       cc-input-text[name=name] {
         flex: 1 1 0;
         min-width: 10rem;
       }
+
       .input-btn {
         display: flex;
         flex: 2 1 0;
       }
+
       cc-input-text[name=value] {
         flex: 1 1 0;
         min-width: 20rem;
       }
+
       cc-button {
         /* TODO: handle bad i18n */
         width: 7rem;
@@ -66,8 +68,8 @@ export class EnvVarCreate extends LitElement {
 
   render () {
 
-    const isNameInvalid = !envVarUtils.validateName(this[variableName]);
-    const isNameAlreadyDefined = this.variablesNames.includes(this[variableName]);
+    const isNameInvalid = !envVarUtils.validateName(this._variableName);
+    const isNameAlreadyDefined = this.variablesNames.includes(this._variableName);
     const hasErrors = isNameInvalid || isNameAlreadyDefined;
 
     return html`
@@ -75,54 +77,54 @@ export class EnvVarCreate extends LitElement {
         <cc-input-text
           id="name-input"
           name="name"
-          .value="${this[variableName]}"
+          .value="${this._variableName}"
           placeholder="${i18n(`env-var-create.name.placeholder`)}"
-          @cc-input-text:input="${this.nameInputHandler}"
+          @cc-input-text:input="${this._nameInputHandler}"
         ></cc-input-text>
         <span class="input-btn">
           <cc-input-text
             multi
             name="value"
-            .value="${this[variableValue]}"
+            .value="${this._variableValue}"
             placeholder="${i18n(`env-var-create.value.placeholder`)}"
-            @cc-input-text:input="${this.valueInputHandler}"
+            @cc-input-text:input="${this._valueInputHandler}"
           ></cc-input-text>
           <cc-button
             primary
             ?disabled="${hasErrors}"
-            @click=${this.submitHandler}
+            @click=${this._submitHandler}
           >${i18n(`env-var-create.create-button`)}</cc-button>
         </span>
       </div>
-      <div ?hidden="${!isNameInvalid || this[variableName] === ''}">
-        ${i18n(`env-var-create.errors.invalid-name`, { name: this[variableName] })}  
+      <div ?hidden="${!isNameInvalid || this._variableName === ''}">
+        ${i18n(`env-var-create.errors.invalid-name`, { name: this._variableName })}  
       </div>
       <div ?hidden="${!isNameAlreadyDefined}">
-        ${i18n(`env-var-create.errors.already-defined-name`, { name: this[variableName] })}  
+        ${i18n(`env-var-create.errors.already-defined-name`, { name: this._variableName })}  
       </div>
     `;
   }
 
-  nameInputHandler ({ detail }) {
-    this[variableName] = detail.value;
+  _nameInputHandler ({ detail }) {
+    this._variableName = detail.value;
   }
 
-  valueInputHandler ({ detail }) {
-    this[variableValue] = detail.value;
+  _valueInputHandler ({ detail }) {
+    this._variableValue = detail.value;
   }
 
-  submitHandler (e) {
+  _submitHandler (e) {
     dispatchCustomEvent(this, 'create', {
-      name: this[variableName],
-      value: this[variableValue],
+      name: this._variableName,
+      value: this._variableValue,
     });
     this.reset();
     this.shadowRoot.getElementById('name-input').focus();
   }
 
   reset () {
-    this[variableName] = '';
-    this[variableValue] = '';
+    this._variableName = '';
+    this._variableValue = '';
   }
 }
 
