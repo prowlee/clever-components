@@ -1,144 +1,111 @@
 = TODO
 
-* Validation on new env var name
-** https://stackoverflow.com/questions/2821043/allowed-characters-in-linux-environment-variable-names
-** https://gitlab.corp.clever-cloud.com/clever-cloud/ccapidto/blob/master/src/main/java/com/clevercloud/util/Validator.java
-** https://github.com/CleverCloud/clever-tools/blob/c0d02f7a19d4e06e7cf52ac72e0d71fb14e638d6/src/models/variables.js#L8-L17
-** https://gitlab.corp.clever-cloud.com/search?utf8=%E2%9C%93&snippets=&scope=&search=public+boolean+validateEnvNameString%28String+name%2C+String+s%29&project_id=52
-* https://docs.docker.com/compose/env-file/
-* styles/CSS
-* use better base components (inputs, buttons...)
-* give settings to an <env-var-input>
-** validation on the variable (type, enum...)
-** correct input that goest with it (toggle, select...)
-** also give some docs that we can toggle with a (i) info icon
-* given settings to an <env-var-form>
-** allow to suggest some env var names
-** expose docs that goes with it
-** expose strict possible values
-* Handle multiline
-* Should we try codemirror for expert mode?
-* Do we need some "password hidden ****" vars?
+== storybook
 
-This means we need to make a project out of this: https://www.clever-cloud.com/doc/get-help/reference-environment-variables/
-* specify all env vars in a formalized format that can be read by our different apps
-** CLI
-** console
-** addon config
-** docs
+* entrée avec description du projet
+* Avoir un thème par défaut pour le fond du storybook
+** font-family Clever etc...
+** Faciliter l'aération d'exemple (comme les boutons)
 
-* Specify:
-* Name
-* Value format
-* Default value
-* type: (user|addon|variant)
-** user defined
-** injected by addon
-** injected by variant
-* variants (list of variants or ALL)
-* addons (list of variants or ALL)
+== composant en mode SFC à la Vue
 
-{
-  name: 'APP_HOME',
-  format: 'String',
-  type: 'INJECTED_BY_VARIANT'
-  description: ' 	The absolute path to your application folder',
-  exampleValue: '/home/bas/app_649a93d1-6677-44bc-aca7-6f46107d6e02',
-  variants: ['ALL'],
-}
-
-{
-  name: 'CC_FS_BUCKET',
-  format: 'String',
-  type: 'USER_DEFINED'
-  description: '',
-  exampleValue: '',
-  variants: ['ALL'],
-  addons: ['fs-bucket'],
-}
-
-{
-  name: 'POSTGRESQL_ADDON_DB',
-  format: 'String',
-  type: 'INJECTED_BY_ADDON'
-  description: '',
-  exampleValue: '',
-  variants: ['ALL'],
-  addons: ['pg'],
-}
-
-== How would we allow clients to have custom suggestions for their env vars?
-
-* Should we propose a format for them
-* Should we propose a
-
-== tree
-
-* <env-var-form>
-** <env-var-simple>
-*** loop => <env-var-input>
-** <env-var-expert>
-*** direct display
-
-https://jsbin.com/viwozurize/edit?html,css,js,console,output
-
-
-https://github.com/material-components/material-components-web
-https://github.com/material-components/material-components-web-components
-https://github.com/web-padawan/aybolit/
-https://github.com/web-padawan/aybolit/tree/master/packages/bulma
-
-https://portal.exoscale.com/register?coupon=CLEVERCLOUDROCKS
-https://adminlte.io/themes/AdminLTE/pages/forms/general.html
-https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/
-
-== solve
-
-* packaging of webcomponents
-* i18n at buildtime
-** https://github.com/lingui/js-lingui/tree/master/packages/babel-plugin-transform-js
-** https://github.com/lingui/js-lingui/tree/master/packages/babel-plugin-extract-messages
-** https://lingui.js.org/misc/talks-about-i18n.html
-** https://projectfluent.org/
-** https://github.com/vimeo/babel-plugin-transform-i18n
-** https://github.com/skolmer/i18n-tag-schema
-** https://github.com/skolmer/babel-plugin-i18n-tag-translate
-** https://github.com/skolmer/es2015-i18n-tag
-** https://lingui.js.org/
-** https://npms.io/search?q=babel+plugin+i18n
-** https://f.vimeocdn.com/p/3.8.38/js/player.fr-FR.js
-** https://f.vimeocdn.com/p/3.8.38/js/player.js
-** https://f.vimeocdn.com/p/3.8.38/js/player.es.js
-
-== essai de https://github.com/PolymerX/lit-loader
+essai de https://github.com/PolymerX/lit-loader
 
 * peu concluant, l'outil veut trop en faire je trouve
 * ça pourrait être intéressant de copier l'idée et modif l'implem
 * j'ai aussi eu des erreurs avec celui là (https://github.com/bennypowers/lit-css-loader), il doit me manquer un truc
 
-https://github.com/storybooks/storybook/issues/6623
-
 == i18n
 
-=== import alias babel plugin:
+* Vérifier toutes les trads fr
+* brancher les traductions dans la console
+* comment gérer le formattage HTML
+* documenter ce qui a été fait
 
-https://github.com/tleunen/babel-plugin-module-resolver
+=== links
 
-```
-[
-    'module-resolver',
-    {
-      'alias': {
-        '@i18n': '../lib/i18n.js',
-      },
-    },
-],
-```
+* https://github.com/lingui/js-lingui/tree/master/packages/babel-plugin-transform-js
+* https://github.com/lingui/js-lingui/tree/master/packages/babel-plugin-extract-messages
+* https://lingui.js.org/misc/talks-about-i18n.html
+* https://projectfluent.org/
+* https://github.com/vimeo/babel-plugin-transform-i18n
+* https://github.com/skolmer/i18n-tag-schema
+* https://github.com/skolmer/babel-plugin-i18n-tag-translate
+* https://github.com/skolmer/es2015-i18n-tag
+* https://lingui.js.org/
+* https://npms.io/search?q=babel+plugin+i18n
+* https://f.vimeocdn.com/p/3.8.38/js/player.fr-FR.js
+* https://f.vimeocdn.com/p/3.8.38/js/player.js
+* https://f.vimeocdn.com/p/3.8.38/js/player.es.js
 
-=== macro system
 
-https://github.com/kentcdodds/babel-plugin-macros#installation
-https://github.com/kentcdodds/babel-plugin-macros/blob/master/other/docs/user.md
-https://github.com/kentcdodds/babel-plugin-macros/blob/master/other/docs/author.md
-https://github.com/babel/babel/blob/master/packages/babel-parser/ast/spec.md#templateliteral
-https://astexplorer.net/
+* https://github.com/kentcdodds/babel-plugin-macros#installation
+* https://github.com/kentcdodds/babel-plugin-macros/blob/master/other/docs/user.md
+* https://github.com/kentcdodds/babel-plugin-macros/blob/master/other/docs/author.md
+* https://github.com/babel/babel/blob/master/packages/babel-parser/ast/spec.md#templateliteral
+* https://astexplorer.net/
+
+
+== random
+
+* créer un composant pour afficher en readonly les var d'env d'addons
+* créer un composant pour le header (var d'env)
+* créer un composant pour le header (exposed config)
+* tester le responsive un peu partout
+* penser à ce qu'il faut pour le composant header (c'est sûrement un peu compliqué)
+* faire le point sur le nouveau client REST
+* brancher le composant sur exposed config
+* faire le point sur l'addon config
+* fait le point sur les clever tools
+
+== compnents
+
+* <env-var-input>
+** Intégrer des icônes pour les states
+** ajouter un fond de couleur sur toute la ligne :hover
+** ajouter un fond de couleur sur toute la ligne :focus
+** gérer les noms de variables trop longs
+** gérer les valeurs de variables trop longues (scrollbar horizontale)
+** ajouter un loading state (skeleton screen)
+** ajouter mode readonly pour la lecture seule des addons
+*** pas d'icône, pas de bouton
+** ?? copier/coller la valeur en un clic
+** ?? limit de hauteur pour les valeurs
+
+* <env-var-create>
+** formatter un peu mieux les erreurs
+** ? faut-il des labels pour les 2 champs
+
+* <env-var-editor-simple>
+** ajouter un loading state (skeleton screen)
+*** mettre 4 ou 5 lignes "vides" en mode loading
+** ?? labels au dessus des colonnes (on fait quoi en responsive)
+
+* <env-var-editor-expert>
+** formatter un peu mieux les erreurs
+** empêcher le switch de mode quand il y a une erreur
+
+* <env-var-form>
+** ajouter un bouton update and restart app
+*** ?? est-ce qu'on doit gérer le fait de proposer un rechargement des apps dans exposed config
+** ajouter un état loading (filter: blur(0.2rem) + loader par dessus) cursor waiting
+** ajouter de quoi mettre des messages d'erreur de l'API (ou remonter les messages à la notif)
+** ?? faut-il faire du position sticky pour que les gens de ratent pas le bouton update
+
+== compnents (later)
+
+* Should we try codemirror for expert mode?
+* Do we need some "password hidden ****" vars?
+
+* <env-var-create>
+** prendre en charge une config (text, bool, select...) et charger le composant qui va bien
+** proposer des suggestions
+** prendre en charge une doc pour le type de variable
+
+* <env-var-editor-simple>
+** prendre en charge une config (text, bool, select...) et charger le composant qui va bien
+** prendre en charge une doc pour le type de variable
+** créer des composant <env-var-input-text> et autres...
+
+* <env-var-editor-expert>
+** prendre en charge une config (text, bool, select...)  et afficher les erreurs
