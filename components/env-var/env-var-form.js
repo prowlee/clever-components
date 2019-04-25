@@ -3,7 +3,7 @@ import './env-var-editor-expert.js';
 import './env-var-editor-simple.js';
 import { css, html, LitElement } from 'lit-element';
 import { dispatchCustomEvent } from '../lib/events.js';
-import { i18n } from '@i18n';
+import i18n from '@i18n';
 
 /**
  * A high level env var editor form, wraps simple editor and expert editor
@@ -84,8 +84,8 @@ export class EnvVarForm extends LitElement {
       </div>
       
       <div class="button-bar">
-        <cc-button @click="${this._resetHandler}">reset</cc-button>
-        <cc-button success @click="${this._updateHandler}">save changes</cc-button>
+        <cc-button @click="${this._resetHandler}">${i18n('env-var-form.reset')}</cc-button>
+        <cc-button success @click="${this._updateHandler}">${i18n('env-var-form.update')}</cc-button>
       </div>
     `;
   }

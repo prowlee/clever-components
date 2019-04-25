@@ -1,7 +1,7 @@
 import '../../components/env-var/env-var-input.js';
 import notes from '../../.components-docs/env-var-input.md';
 import { storiesOf } from '@storybook/html';
-import { withCustomEventActions } from '../lib/even-action';
+import { withCustomEventActions } from '../lib/event-action';
 
 const eventNames = ['env-var-input:input', 'env-var-input:delete', 'env-var-input:keep'];
 

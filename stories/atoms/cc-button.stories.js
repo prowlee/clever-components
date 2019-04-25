@@ -1,13 +1,12 @@
 import '../../components/atoms/cc-button.js';
 import notes from '../../.components-docs/cc-button.md';
 import { storiesOf } from '@storybook/html';
-import { text, withKnobs } from '@storybook/addon-knobs';
+import { text } from '@storybook/addon-knobs';
 import { withActions } from '@storybook/addon-actions';
 
 const eventNames = ['click cc-button'];
 
 storiesOf('atoms/<cc-button>', module)
-  .addDecorator(withKnobs)
   .add('all', () => withActions(...eventNames)(() => {
 
     const label = text('Button label', '');

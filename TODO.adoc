@@ -115,3 +115,30 @@ https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interf
 * peu concluant, l'outil veut trop en faire je trouve
 * ça pourrait être intéressant de copier l'idée et modif l'implem
 * j'ai aussi eu des erreurs avec celui là (https://github.com/bennypowers/lit-css-loader), il doit me manquer un truc
+
+https://github.com/storybooks/storybook/issues/6623
+
+== i18n
+
+=== import alias babel plugin:
+
+https://github.com/tleunen/babel-plugin-module-resolver
+
+```
+[
+    'module-resolver',
+    {
+      'alias': {
+        '@i18n': '../lib/i18n.js',
+      },
+    },
+],
+```
+
+=== macro system
+
+https://github.com/kentcdodds/babel-plugin-macros#installation
+https://github.com/kentcdodds/babel-plugin-macros/blob/master/other/docs/user.md
+https://github.com/kentcdodds/babel-plugin-macros/blob/master/other/docs/author.md
+https://github.com/babel/babel/blob/master/packages/babel-parser/ast/spec.md#templateliteral
+https://astexplorer.net/

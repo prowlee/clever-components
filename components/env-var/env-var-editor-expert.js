@@ -2,7 +2,7 @@ import '../atoms/cc-input-text.js';
 import envVarUtils from '../lib/env-vars.js';
 import { css, html, LitElement } from 'lit-element';
 import { dispatchCustomEvent } from '../lib/events.js';
-import { i18n } from '@i18n';
+import i18n from '@i18n';
 
 /**
  * A high level env var editor, edit all vars at once with a big string that is parsed and provides error messages

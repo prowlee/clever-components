@@ -1,7 +1,7 @@
 import '../../components/atoms/cc-button.js';
 import notes from '../../.components-docs/cc-input-text.md';
 import { storiesOf } from '@storybook/html';
-import { withCustomEventActions } from '../lib/even-action';
+import { withCustomEventActions } from '../lib/event-action';
 
 const eventNames = ['cc-input-text:input'];
 

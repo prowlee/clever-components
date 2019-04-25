@@ -3,7 +3,7 @@ import '../atoms/cc-input-text.js';
 import envVarUtils from '../lib/env-vars.js';
 import { css, html, LitElement } from 'lit-element';
 import { dispatchCustomEvent } from '../lib/events';
-import { i18n } from '@i18n';
+import i18n from '@i18n';
 
 export class EnvVarCreate extends LitElement {
 

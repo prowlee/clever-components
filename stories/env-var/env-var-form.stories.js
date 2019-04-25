@@ -1,7 +1,7 @@
 import '../../components/env-var/env-var-form';
 import notes from '../../.components-docs/env-var-form.md';
 import { storiesOf } from '@storybook/html';
-import { withCustomEventActions } from '../lib/even-action';
+import { withCustomEventActions } from '../lib/event-action';
 
 const eventNames = ['env-var-form:submit'];
 

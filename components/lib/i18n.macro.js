@@ -1,6 +1,6 @@
 'use strict';
 
-const i18n = require('./i18n.js');
+const translate = require('./translate.js');
 
 const { createMacro } = require('babel-plugin-macros');
 
@@ -17,7 +17,7 @@ function myMacro ({ references, state, babel }) {
   // read more below...
   references.default.forEach((referencePath) => {
     const key = referencePath.parent.arguments[0].value;
-    const trad = i18n(key);
+    const trad = translate(key);
     // console.log(referencePath.parentPath);
     // console.log(referencePath.parentPath.parentPath);
     // console.log(babel.types);
@@ -36,7 +36,7 @@ function myMacro ({ references, state, babel }) {
     ));
     // console.log(referencePath.parentPath.parentPath.node.expressions);
     // console.log(referencePath.parentPath.parentPath.node.quasis);
-    // const trad = i18n(key);
+    // const trad = translate(key);
     // console.log({ key, trad });
     // referencePath.parentPath.replaceWith(babel.types.stringLiteral(trad));
   });
