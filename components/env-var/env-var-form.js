@@ -3,6 +3,7 @@ import './env-var-editor-expert.js';
 import './env-var-editor-simple.js';
 import { css, html, LitElement } from 'lit-element';
 import { dispatchCustomEvent } from '../lib/events.js';
+import { i18n } from '@i18n';
 
 /**
  * A high level env var editor form, wraps simple editor and expert editor
@@ -40,10 +41,12 @@ export class EnvVarForm extends LitElement {
         border: 1px solid #bcc2d1;
         padding: 1rem;
       }
+
       .mode-switcher,
       .editor {
         margin-bottom: 2rem;
       }
+
       .button-bar {
         display: flex;
         justify-content: space-between;
@@ -60,9 +63,9 @@ export class EnvVarForm extends LitElement {
   render () {
     return html`
       <div class="mode-switcher">
-        <label for="SIMPLE">Simple</label>
+        <label for="SIMPLE">${i18n('env-var-form.mode.simple')}</label>
         <input type="radio" name="mode" value="SIMPLE" id="SIMPLE" ?checked="${this._mode === 'SIMPLE'}" @change="${this._toggleModeHandler}">
-        <label for="EXPERT">Expert</label>
+        <label for="EXPERT">${i18n('env-var-form.mode.expert')}</label>
         <input type="radio" name="mode" value="EXPERT" id="EXPERT" ?checked="${this._mode === 'EXPERT'}" @change="${this._toggleModeHandler}">
       </div>
       

@@ -2,6 +2,7 @@ import '../atoms/cc-input-text.js';
 import envVarUtils from '../lib/env-vars.js';
 import { css, html, LitElement } from 'lit-element';
 import { dispatchCustomEvent } from '../lib/events.js';
+import { i18n } from '@i18n';
 
 /**
  * A high level env var editor, edit all vars at once with a big string that is parsed and provides error messages
@@ -53,28 +54,28 @@ export class EnvVarEditorExpert extends LitElement {
       if (type === envVarUtils.ERROR_TYPES.INVALID_NAME) {
         return {
           line: pos.line,
-          msg: html`<code>${name}</code> is not a valid variable name`,
+          msg: i18n('env-var-editor-expert.errors.invalid-name', { name }),
         };
       }
       if (type === envVarUtils.ERROR_TYPES.DUPLICATED_NAME) {
         return {
           line: pos.line,
-          msg: html`be careful, the name <code>${name}</code> is already defined`,
+          msg: i18n('env-var-editor-expert.errors.duplicated-name', { name }),
         };
       }
       if (type === envVarUtils.ERROR_TYPES.INVALID_LINE) {
         return {
           line: pos.line,
-          msg: html`this line is not valid, the correct pattern is <code>KEY="VALUE"</code>`,
+          msg: i18n('env-var-editor-expert.errors.invalid-line'),
         };
       }
       if (type === envVarUtils.ERROR_TYPES.INVALID_VALUE) {
         return {
           line: pos.line,
-          msg: html`the value is not valid, if you use quotes, you need to escape them like this <code>\\"</code> or quote the whole value.`,
+          msg: i18n('env-var-editor-expert.errors.invalid-value'),
         };
       }
-      return { line: '?', msg: 'Unknown Error' };
+      return { line: '?', msg: i18n('env-var-editor-expert.errors.unknown') };
     });
   }
 
@@ -91,7 +92,7 @@ export class EnvVarEditorExpert extends LitElement {
           <li><strong>line ${line}:</strong> ${msg}</li>
         `)}
       </ul>
-      <div ?hidden="${this._formattedErrors.length > 0}">no errors</div>
+      <div ?hidden="${this._formattedErrors.length > 0}">${i18n('env-var-editor-expert.errors.none')}</div>
     `;
   }
 

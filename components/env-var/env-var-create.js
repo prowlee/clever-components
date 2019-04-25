@@ -1,17 +1,9 @@
 import '../atoms/cc-button.js';
 import '../atoms/cc-input-text.js';
 import envVarUtils from '../lib/env-vars.js';
-import initI18n from '../lib/i18n.js';
 import { css, html, LitElement } from 'lit-element';
 import { dispatchCustomEvent } from '../lib/events';
-
-const i18n = initI18n({
-  'env-var-create.name.placeholder': 'ENV_VAR_NAME',
-  'env-var-create.value.placeholder': 'env var value',
-  'env-var-create.create-button': 'Create',
-  'env-var-create.errors.invalid-name': ({ name }) => html`Name <code>${name}</code> is invalid`,
-  'env-var-create.errors.already-defined-name': ({ name }) => html`Name <code>${name}</code> is already defined`,
-});
+import { i18n } from '@i18n';
 
 export class EnvVarCreate extends LitElement {
 

@@ -1,8 +1,8 @@
 import '../atoms/cc-button.js';
 import '../atoms/cc-input-text.js';
-import { css, html, LitElement, unsafeCSS } from 'lit-element';
+import { css, html, LitElement } from 'lit-element';
 import { dispatchCustomEvent } from '../lib/events.js';
-// import deleteSvg from '../assets/delete.svg';
+import { i18n } from '@i18n';
 
 /**
  * A small input to manipulate an environement variable
@@ -21,17 +21,6 @@ import { dispatchCustomEvent } from '../lib/events.js';
  */
 export class EnvVarInput extends LitElement {
 
-  static get i18n () {
-    return {
-      deleteButton: 'Delete',
-      keepButton: 'Keep',
-      valuePlaceholder: 'Environment variable value',
-      // deleteButton: 'Supprimer',
-      // keepButton: 'Garder',
-      // valuePlaceholder: 'Valeur de la variable d\'environnement',
-    };
-  }
-
   static get properties () {
     return {
       name: { type: String },
@@ -48,7 +37,6 @@ export class EnvVarInput extends LitElement {
     this.isNew = false;
     this.isEdited = false;
     this.isDeleted = false;
-    // console.log({ deleteSvg });
   }
 
   static get styles () {
@@ -100,19 +88,14 @@ export class EnvVarInput extends LitElement {
         /* TODO: handle bad i18n */
         width: 7rem;
       }
-      
-      .label {
-        background-repeat: no-repeat;
-      }
     `;
-        // background-image: url(${unsafeCSS(deleteSvg)});
   }
 
   render () {
 
     const buttons = this.isDeleted
-      ? html`<cc-button @click=${this._keepHandler}>${this.constructor.i18n.keepButton}</cc-button>`
-      : html`<cc-button danger outlined @click=${this._deleteHandler}>${this.constructor.i18n.deleteButton}</cc-button>`;
+      ? html`<cc-button @click=${this._keepHandler}>${i18n('env-var-input.keep-button')}</cc-button>`
+      : html`<cc-button danger outlined @click=${this._deleteHandler}>${i18n('env-var-input.delete-button')}</cc-button>`;
 
     return html`
       <span class="label">
@@ -125,7 +108,7 @@ export class EnvVarInput extends LitElement {
           .value=${this.value}
           name=${this.name}
           ?disabled=${this.isDeleted}
-          .placeholder=${this.constructor.i18n.valuePlaceholder}
+          .placeholder=${i18n('env-var-input.value-placeholder')}
           @input=${this._inputHandler}
         ></cc-input-text>
         ${buttons}
