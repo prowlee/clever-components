@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "lit-element": "^2.2.0",
-    "lit-html": "^1.1.0"
+    "lit-html": "^1.1.0",
+    "mem": "^5.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",
@@ -29,6 +30,7 @@
     "@storybook/addon-notes": "^5.1.9",
     "@storybook/html": "^5.1.9",
     "@storybook/theming": "^5.1.9",
+    "@webcomponents/webcomponentsjs": "^2.2.10",
     "babel-loader": "^8.0.6",
     "babel-plugin-template-html-minifier": "^3.0.1",
     "del": "^5.0.0",

@@ -1,0 +1,109 @@
+= TODO
+
+== storybook
+
+* Ajouter une entrée (une story) avec la description du projet
+* bouger le i18n d'un knob à un parameter
+* Automatiser le build de la docs de chaque composant (avec web-component-analyser)
+
+== Packaging
+
+* Documenter ce qui a été fait (pourquoi le minify ici?) ADR
+
+== i18n
+
+* comment gérer le formattage HTML (escaping)
+* documenter ce qui a été fait (pourquoi le @i18n, import maps, macros...)
+
+=== links
+
+* https://github.com/lingui/js-lingui/tree/master/packages/babel-plugin-transform-js
+* https://github.com/lingui/js-lingui/tree/master/packages/babel-plugin-extract-messages
+* https://lingui.js.org/misc/talks-about-i18n.html
+* https://projectfluent.org/
+* https://github.com/vimeo/babel-plugin-transform-i18n
+* https://github.com/skolmer/i18n-tag-schema
+* https://github.com/skolmer/babel-plugin-i18n-tag-translate
+* https://github.com/skolmer/es2015-i18n-tag
+* https://lingui.js.org/
+* https://npms.io/search?q=babel+plugin+i18n
+* https://f.vimeocdn.com/p/3.8.38/js/player.fr-FR.js
+* https://f.vimeocdn.com/p/3.8.38/js/player.js
+* https://f.vimeocdn.com/p/3.8.38/js/player.es.js
+
+* https://github.com/kentcdodds/babel-plugin-macros#installation
+* https://github.com/kentcdodds/babel-plugin-macros/blob/master/other/docs/user.md
+* https://github.com/kentcdodds/babel-plugin-macros/blob/master/other/docs/author.md
+* https://github.com/babel/babel/blob/master/packages/babel-parser/ast/spec.md#templateliteral
+* https://astexplorer.net/
+
+== Global
+
+* faire le point sur le nouveau client REST
+//* brancher le composant sur exposed config
+* faire le point sur l'addon config
+* fait le point sur les clever tools
+* déplacer le validateur dans clever-client
+* comment faire des tests ??
+
+== components
+
+* <env-var-input>
+** Intégrer des icônes pour les states
+** ajouter un fond de couleur sur toute la ligne :hover
+** ajouter un fond de couleur sur toute la ligne :focus
+** ?? copier/coller la valeur en un clic
+** ?? limit de hauteur pour les valeurs
+
+* <env-var-create>
+** formatter un peu mieux les erreurs
+
+* <env-var-editor-simple>
+
+* <env-var-editor-expert>
+** formatter un peu mieux les erreurs
+
+* <env-var-form>
+
+== compnents (later)
+
+* Should we try codemirror for expert mode?
+* Do we need some "password hidden ****" vars?
+
+* <env-var-create>
+** prendre en charge une config (text, bool, select...) et charger le composant qui va bien
+** proposer des suggestions
+** prendre en charge une doc pour le type de variable
+
+* <env-var-editor-simple>
+** prendre en charge une config (text, bool, select...) et charger le composant qui va bien
+** prendre en charge une doc pour le type de variable
+** créer des composant <env-var-input-text> et autres...
+
+* <env-var-editor-expert>
+** prendre en charge une config (text, bool, select...)  et afficher les erreurs
+
+== Idées
+
+=== Composants en mode SFC à la Vue
+
+Essai de https://github.com/PolymerX/lit-loader
+
+* peu concluant, l'outil veut trop en faire je trouve
+* ça pourrait être intéressant de copier l'idée et modif l'implem
+* j'ai aussi eu des erreurs avec celui là (https://github.com/bennypowers/lit-css-loader), il doit me manquer un truc
+
+
+== Later
+
+* picto à la place d'emoji
+* click bouton copy in clipboard
+* remonter le message d'erreur d'API dans la popup d'erreur
+* afficher message d'erreur (fail load list addons d'un app pr les vars d'env)
+
+
+== Idée pour le "reactif"
+
+Avoir une vue du flow de réactivité (graph)
+
+* propfoo est modifié => on modifie propbar
