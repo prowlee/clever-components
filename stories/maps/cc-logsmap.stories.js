@@ -47,11 +47,11 @@ storiesOf('2. Maps|<cc-logsmap>', module)
   `))
   .add('orga vs app only', withActions(() => `
     <div class="title">Data for all apps of an orga:</div>
-    <cc-logsmap orga-name="ACME Corp" style="width:600px;height:300px;display: inline-block;"></cc-logsmap>
-    <cc-logsmap orga-name="ACME Corp" mode="heatmap" style="width:600px;height:300px;display: inline-block;"></cc-logsmap>
-    <div class="title">Data for only one app:</div>
-    <cc-logsmap app-name="My Awesome Java App (PROD)" style="width:600px;height:300px;display: inline-block;"></cc-logsmap>
-    <cc-logsmap app-name="My Awesome Java App (PROD)" mode="heatmap" style="width:600px;height:300px;display: inline-block;"></cc-logsmap>
+    <cc-logsmap orga-name="ACME <code>Corp</code>" style="width:600px;height:300px;display: inline-block;"></cc-logsmap>
+<!--    <cc-logsmap orga-name="ACME Corp" mode="heatmap" style="width:600px;height:300px;display: inline-block;"></cc-logsmap>-->
+<!--    <div class="title">Data for only one app:</div>-->
+<!--    <cc-logsmap app-name="My Awesome Java App (PROD)" style="width:600px;height:300px;display: inline-block;"></cc-logsmap>-->
+<!--    <cc-logsmap app-name="My Awesome Java App (PROD)" mode="heatmap" style="width:600px;height:300px;display: inline-block;"></cc-logsmap>-->
   `))
   .add('loading state', withActions(() => {
     return createComponent({ loading: true });

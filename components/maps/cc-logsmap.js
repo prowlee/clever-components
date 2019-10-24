@@ -3,6 +3,15 @@ import './cc-map.js';
 import { css, html, LitElement } from 'lit-element';
 import { dispatchCustomEvent } from '../lib/events.js';
 import { i18n } from '../lib/i18n.js';
+import { unsafeHTML } from '../lib/unsafe.js';
+
+const unsafeI18N = (text) => {
+  return unsafeHTML(text, (node) => ['CODE', 'EM', 'STRONG'].includes(node.nodeName));
+};
+
+const unsafeI18N_foo = (text) => {
+  return unsafeHTML(text, (node) => ['CODE', 'EM'].includes(node.nodeName));
+};
 
 /**
  * World map of access logs with two modes (blinking dots or heatmap)
@@ -116,7 +125,13 @@ export class CcLogsMap extends LitElement {
         ?loading=${this.loading}
         ?error=${this.error}
         .heatmapPoints=${this.heatmapPoints}
-      >${this._getLegend()}</cc-map>
+      >
+      ${this._getLegend()}
+      <br>
+      ${unsafeI18N(this._getLegend())}
+      <br>
+      ${unsafeI18N_foo(this._getLegend())}
+      </cc-map>
     `;
   }
 

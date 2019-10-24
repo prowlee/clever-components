@@ -217,7 +217,7 @@ export class CcButton extends LitElement {
           background-image: linear-gradient(#fff, #fff);
           background-position: left bottom;
           background-repeat: no-repeat;
-          background-size: 0;
+          background-size: 0 10%;
         }
 
         .outlined {
@@ -278,5 +278,9 @@ export class CcButton extends LitElement {
     ];
   }
 }
+
+// const script = document.createElement('script')
+// script.src = 'https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js'
+// document.body.appendChild(script)
 
 window.customElements.define('cc-button', CcButton);
