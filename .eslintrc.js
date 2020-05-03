@@ -7,6 +7,12 @@ module.exports = {
   ],
   'rules': {
     'sort-lit-element-css-declarations': ['error'],
+    'i18n-valid-key': ['error'],
+    'i18n-valid-value': ['error'],
+    'i18n-no-paramless-arrow': ['error'],
+    'i18n-no-sanitize-without-html': ['error'],
+    'i18n-always-sanitize-with-html': ['error'],
+    'i18n-always-arrow-with-sanitize': ['error'],
     'arrow-parens': ['error', 'always'],
     'brace-style': ['error', 'stroustrup'],
     'comma-dangle': ['error', 'always-multiline'],

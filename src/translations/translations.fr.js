@@ -63,7 +63,7 @@ export const translations = {
   // cc-addon-backups
   'cc-addon-backups.command-password': `Cette commande vous demandera votre mot de passe, le voici :`,
   'cc-addon-backups.delete': ({ createdAt }) => sanitize`Supprimer la sauvegarde du <strong title="${formatDate(createdAt)}">${formatDatetime(createdAt)}</strong>`,
-  'cc-addon-backups.delete.btn': 'supprimer...',
+  'cc-addon-backups.delete.btn': `supprimer...`,
   'cc-addon-backups.delete.with-service.title.es-addon': `Suppression avec Kibana`,
   'cc-addon-backups.delete.with-service.description.es-addon': ({ href }) => sanitize`Vous pouvez supprimer cette sauvegarde avec Kibana en vous rendant sur le <a href="${href}">dépôt de sauvegardes</a>.`,
   'cc-addon-backups.delete.manual.title': `Suppression manuelle`,
@@ -75,7 +75,7 @@ export const translations = {
   'cc-addon-backups.link.es-addon-old': `ouvrir dans Elasticsearch`,
   'cc-addon-backups.loading-error': `Une erreur est survenue pendant le chargement des sauvegardes.`,
   'cc-addon-backups.restore': ({ createdAt }) => sanitize`Restaurer la sauvegarde du <strong title="${formatDate(createdAt)}">${formatDatetime(createdAt)}</strong>`,
-  'cc-addon-backups.restore.btn': 'restaurer...',
+  'cc-addon-backups.restore.btn': `restaurer...`,
   'cc-addon-backups.restore.with-service.title.es-addon': `Restauration avec Kibana`,
   'cc-addon-backups.restore.with-service.description.es-addon': ({ href }) => sanitize`Vous pouvez restaurer cette sauvegarde avec Kibana en vous rendant sur le <a href="${href}">dépôt de sauvegardes</a>.`,
   'cc-addon-backups.restore.manual.title': `Restauration manuelle`,
