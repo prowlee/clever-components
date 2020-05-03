@@ -1,0 +1,38 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="📌 Docs/Architecture Decision Records/ADR 0011: Sorting CSS declarations" />
+
+# ADR 0011: Sorting CSS declarations
+
+Since we started this project, we tried to apply an alphabetical sort on CSS declarations inside our LitElement based components.
+We did it manually and of course we failed in some places so it's time to automate this...
+
+TODO:
+
+* Explain why we want to sort declarations
+* Explain how we failed with raw babel
+* Explain how an ESLint rule with fix works better
+* Introduce postcss (and sync/async stuffs)
+* Explain how https://github.com/Siilwyn/css-declaration-sorter failed
+* Explain how https://github.com/hudochenkov/postcss-sorting works
+
+LINKS:
+
+* https://medium.com/ing-blog/babel-beyond-assumptions-cf04b2dc1006
+* https://github.com/web-padawan/awesome-lit-html
+* https://github.com/umbopepato/rollup-plugin-postcss-lit
+* https://github.com/egoist/rollup-plugin-postcss
+* https://github.com/bennypowers/rollup-plugin-lit-css
+* babel-plugin-template-html-minifier
+* https://astexplorer.net/
+* https://github.com/eslint/eslint/blob/master/lib/rules/arrow-parens.js
+* https://eslint.org/docs/developer-guide/working-with-rules
+* https://github.com/dustinspecker/awesome-eslint
+* https://github.com/Siilwyn/css-declaration-sorter/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc
+* https://github.com/Siilwyn/css-declaration-sorter/blob/master/src/property-scraper.js
+* https://github.com/postcss/postcss
+* https://github.com/hudochenkov/postcss-sorting
+
+QUESTIONS:
+
+* Should we apply Prettier ?
