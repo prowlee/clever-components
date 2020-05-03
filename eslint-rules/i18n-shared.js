@@ -3,6 +3,7 @@
 function isTranslationFile (context) {
   const filename = context.getFilename();
   return filename.match(/\/translations\/translations\.[a-z]+\.js$/);
+  // return filename.match(/\/translations\/translations\.test\.js$/);
 }
 
 function isMainTranslationNode (node) {

@@ -7,6 +7,7 @@ module.exports = {
   ],
   'rules': {
     'sort-lit-element-css-declarations': ['error'],
+    'i18n-order': ['error'],
     'i18n-valid-key': ['error'],
     'i18n-valid-value': ['error'],
     'i18n-no-paramless-arrow': ['error'],
