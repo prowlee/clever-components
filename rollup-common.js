@@ -2,10 +2,10 @@ import json from '@rollup/plugin-json';
 import glob from 'glob';
 import babel from 'rollup-plugin-babel';
 import clear from 'rollup-plugin-clear';
-import copy from 'rollup-plugin-copy';
 import { terser } from 'rollup-plugin-terser';
 import visualizer from 'rollup-plugin-visualizer';
 import SVGO from 'svgo';
+import { importMetaUrlAssets } from './rollup-plugin-import-meta-url-assets.js';
 
 const svgo = new SVGO({
   // See https://github.com/svg/svgo#what-it-can-do
@@ -92,16 +92,14 @@ export function plugins (sourceDir, outputDir) {
       targets: [outputDir],
     }),
     json(),
-    copy({
-      targets: [{
-        src: `${sourceDir}/assets/*.svg`,
-        dest: outputDir + `/assets`,
-        transform: (svgBuffer) => {
-          return svgo
-            .optimize(svgBuffer.toString())
-            .then(({ data }) => data);
-        },
-      }],
+    importMetaUrlAssets({
+      // Let's assume we don't have import.meta.url assets in our deps to speed up things
+      exclude: 'node_modules/**',
+      transform: (svgBuffer) => {
+        return svgo
+          .optimize(svgBuffer.toString())
+          .then(({ data }) => data);
+      },
     }),
     terser({
       output: { comments: false },
