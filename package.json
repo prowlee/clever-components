@@ -13,6 +13,10 @@
   ],
   "scripts": {
     "components:build": "rollup -c rollup-npm.config.js",
+    "components:build:cdn:split-raw": "rollup -c rollup-cdn-split-raw.config.js",
+    "components:build:cdn:split-min-js": "rollup -c rollup-cdn-split-min-js.config.js",
+    "components:build:cdn:split-min-js-html-css": "rollup -c rollup-cdn-split-min-js-html-css.config.js",
+    "components:build:cdn:split-min-js-html-css-svg": "rollup -c rollup-cdn-split-min-js-html-css-svg.config.js",
     "components:check-i18n": "node tasks/check-i18n.js",
     "components:check-lit": "lit-analyzer src",
     "components:docs": "npm run components:docs-md && npm run components:docs-json",
@@ -42,7 +46,9 @@
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-syntax-import-meta": "^7.10.4",
+    "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
     "@rollup/pluginutils": "^3.1.0",
     "@storybook/addon-a11y": "^5.3.18",
     "@storybook/addon-actions": "^5.3.18",

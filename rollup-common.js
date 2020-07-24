@@ -92,49 +92,9 @@ export function plugins (sourceDir, outputDir) {
       targets: [outputDir],
     }),
     json(),
-    importMetaUrlAssets({
-      // Let's assume we don't have import.meta.url assets in our deps to speed up things
-      exclude: 'node_modules/**',
-      transform: (svgBuffer) => {
-        return svgo
-          .optimize(svgBuffer.toString())
-          .then(({ data }) => data);
-      },
-    }),
-    terser({
-      output: { comments: false },
-    }),
-    babel({
-      plugins: [
-        '@babel/plugin-syntax-dynamic-import',
-        '@babel/plugin-syntax-import-meta',
-        // Minify HTML inside lit-html and LitElement html`` templates
-        // Minify CSS inside LitElement css`` templates
-        [
-          'template-html-minifier',
-          {
-            modules: {
-              'lit-html': ['html'],
-              'lit-element': [
-                'html',
-                { name: 'css', encapsulation: 'style' },
-              ],
-            },
-            htmlMinifier: {
-              caseSensitive: true,
-              collapseWhitespace: true,
-              removeAttributeQuotes: true,
-              removeComments: true,
-              removeRedundantAttributes: true,
-              // This clearly DOES NOT work well with template strings and lit-element
-              sortAttributes: false,
-              sortClassName: true,
-              minifyCSS: { level: 2 },
-            },
-          },
-        ],
-      ],
-    }),
+    importMetaUrlAssetsPlugin,
+    terserPlugin,
+    babelPlugin,
     visualizer({
       filename: `${outputDir}/stats.html`,
       template: 'treemap',
@@ -143,3 +103,49 @@ export function plugins (sourceDir, outputDir) {
     }),
   ];
 }
+
+export const importMetaUrlAssetsPlugin = importMetaUrlAssets({
+  // Let's assume we don't have import.meta.url assets in our deps to speed up things
+  exclude: 'node_modules/**',
+  transform: (svgBuffer) => {
+    return svgo
+      .optimize(svgBuffer.toString())
+      .then(({ data }) => data);
+  },
+});
+
+export const terserPlugin = terser({
+  output: { comments: false },
+});
+
+export const babelPlugin = babel({
+  plugins: [
+    '@babel/plugin-syntax-dynamic-import',
+    '@babel/plugin-syntax-import-meta',
+    // Minify HTML inside lit-html and LitElement html`` templates
+    // Minify CSS inside LitElement css`` templates
+    [
+      'template-html-minifier',
+      {
+        modules: {
+          'lit-html': ['html'],
+          'lit-element': [
+            'html',
+            { name: 'css', encapsulation: 'style' },
+          ],
+        },
+        htmlMinifier: {
+          caseSensitive: true,
+          collapseWhitespace: true,
+          removeAttributeQuotes: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          // This clearly DOES NOT work well with template strings and lit-element
+          sortAttributes: false,
+          sortClassName: true,
+          minifyCSS: { level: 2 },
+        },
+      },
+    ],
+  ],
+});
