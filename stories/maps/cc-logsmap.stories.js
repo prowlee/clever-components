@@ -32,12 +32,16 @@ export const defaultStory = makeStory(conf, {
   ],
   simulations: [
     storyWait(0, ([component]) => {
-      component.addPoints([
-        { lat: 48.8, lon: 2.3, count: 1, delay: 'none' },
-        { lat: 50.6, lon: 3.1, count: 10, delay: 'none' },
-        { lat: 47.2, lon: -1.6, count: 100, delay: 'none' },
-        { lat: 45.7, lon: 4.7, count: 1000, delay: 'none' },
-      ]);
+
+      const fetchData = () => {
+        getFakePointsData(0).then((rawPoints) => {
+          const points = rawPoints.map((p) => ({ ...p, tooltip: p.city, delay }));
+          component.addPoints(points, { spreadDuration });
+        });
+      };
+
+      setTimeoutDom(fetchData, 0, component);
+      setIntervalDom(fetchData, spreadDuration, component);
     }),
   ],
 });
