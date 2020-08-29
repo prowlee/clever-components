@@ -2,11 +2,18 @@ import '../../src/maps/cc-map.js';
 import fakeHeatmapData from '../assets/24-hours-points.json';
 import { makeStory, storyWait } from '../lib/make-story.js';
 import { enhanceStoriesNames } from '../lib/story-names.js';
-import { setIntervalDom, setTimeoutDom } from '../lib/timers.js';
-import { getFakePointsData } from './fake-map-data.js';
 
 const spreadDuration = 5000;
 const delay = spreadDuration + 2000;
+
+const points = [
+  { lat: 48.8, lon: 2.3, tooltip: 'Paris' },
+  { lat: 50.6, lon: 3.1, tooltip: 'Lille' },
+  { lat: 47.2, lon: -1.6, tooltip: 'Nantes' },
+  { lat: 45.7, lon: 4.7, tooltip: 'Lyon' },
+];
+
+const blinkingDots = points.map((p, i) => ({ ...p, count: 10 ** i, tag: 'cc-map-marker-dot' }));
 
 export default {
   title: '🛠 Maps/<cc-map>',
@@ -28,18 +35,8 @@ const conf = {
 
 export const defaultStory = makeStory(conf, {
   items: [
-    { innerHTML: 'Live map with blinking dots' },
+    { innerHTML: 'Blinking dots', points: blinkingDots },
     { mode: 'heatmap', innerHTML: 'Heatmap', heatmapPoints: fakeHeatmapData },
-  ],
-  simulations: [
-    storyWait(0, ([component]) => {
-      component.addPoints([
-        { lat: 48.8, lon: 2.3, count: 1, delay: 'none' },
-        { lat: 50.6, lon: 3.1, count: 10, delay: 'none' },
-        { lat: 47.2, lon: -1.6, count: 100, delay: 'none' },
-        { lat: 45.7, lon: 4.7, count: 1000, delay: 'none' },
-      ]);
-    }),
   ],
 });
 
@@ -95,69 +92,77 @@ export const errorWithLoadingIndicator = makeStory(conf, {
   ],
 });
 
-export const persistentPointsDisplayedAtOnce = makeStory(conf, {
-  name: '👍 Persistent points (displayed at once)',
-  items: [{ innerHTML: '4 points, persistent (no delay), displayed at once.' }],
-  simulations: [
-    storyWait(0, ([component]) => {
-      component.addPoints([
-        { lat: 48.8, lon: 2.3, count: 1, delay: 'none' },
-        { lat: 50.6, lon: 3.1, count: 10, delay: 'none' },
-        { lat: 47.2, lon: -1.6, count: 100, delay: 'none' },
-        { lat: 45.7, lon: 4.7, count: 1000, delay: 'none' },
-      ]);
-    }),
-  ],
+export const pointsWithDots = makeStory(conf, {
+  name: '👍 Points (blinking dots with tooltips)',
+  items: [{ points: blinkingDots }],
 });
 
-export const persistentPointsDisplayedAtOnceWithTooltips = makeStory(conf, {
-  name: '👍 Persistent points (displayed at once, with tooltips)',
-  items: [{ innerHTML: '4 points, persistent (no delay), displayed at once, with tooltips.' }],
-  simulations: [
-    storyWait(0, ([component]) => {
-      component.addPoints([
-        { lat: 48.8, lon: 2.3, count: 1, delay: 'none', tooltip: 'Paris' },
-        { lat: 50.6, lon: 3.1, count: 10, delay: 'none', tooltip: 'Lille' },
-        { lat: 47.2, lon: -1.6, count: 100, delay: 'none', tooltip: 'Nantes' },
-        { lat: 45.7, lon: 4.7, count: 1000, delay: 'none', tooltip: 'Lyon' },
-      ]);
-    }),
-  ],
+export const pointsWithServers = makeStory(conf, {
+  name: '👍 Points (servers)',
+  items: [{ points: points.map((p, i) => ({ ...p, tooltip: null, enabled: i === 2, tag: 'cc-map-marker-server' })) }],
 });
 
-export const temporaryPointsBatchDisplayedWithTooltips = makeStory(conf, {
-  name: '👍 Temporary points (batch displayed, with tooltips)',
-  items: [{ innerHTML: `4 points, ${delay}ms delay, batch displayed displayed over ${spreadDuration}ms, with tooltips.` }],
-  simulations: [
-    storyWait(0, ([component]) => {
-      component.addPoints([
-        { lat: 48.8, lon: 2.3, count: 1, delay, tooltip: 'Paris' },
-        { lat: 50.6, lon: 3.1, count: 10, delay, tooltip: 'Lille' },
-        { lat: 47.2, lon: -1.6, count: 100, delay, tooltip: 'Nantes' },
-        { lat: 45.7, lon: 4.7, count: 1000, delay, tooltip: 'Lyon' },
-      ], { spreadDuration });
-    }),
-  ],
+export const pointsWithDotsNoTooltips = makeStory(conf, {
+  name: '👍 Points (blinking dots without tooltips)',
+  items: [{ points: blinkingDots.map((p) => ({ ...p, tooltip: null })) }],
 });
 
-// TODO: other data sets with knobs
-export const simulationWithDotmap = makeStory(conf, {
+export const simulationWithUpdatesOnSameDot = makeStory(conf, {
   items: [{
     viewZoom: '2',
-    innerHTML: `Realtime simulation, ${delay}ms delay, batch displayed displayed over ${spreadDuration}ms, with tooltips`,
+    mode: 'points',
+    points: [blinkingDots[0]],
   }],
   simulations: [
-    storyWait(0, ([component]) => {
+    storyWait(2000, ([component]) => {
+      component.points = [{ ...blinkingDots[0], count: 5 }];
+    }),
+    storyWait(2000, ([component]) => {
+      component.points = [{ ...blinkingDots[0], count: 20, tooltip: 'Paris<br>Cachan' }];
+    }),
+    storyWait(2000, ([component]) => {
+      component.points = [{ ...blinkingDots[0], count: 50, tooltip: 'Paris<br>Cachan<br>La défense...' }];
+    }),
+    storyWait(2000, ([component]) => {
+      component.points = [{ ...blinkingDots[0], count: 100, tooltip: null }];
+    }),
+  ],
+});
 
-      const fetchData = () => {
-        getFakePointsData(0).then((rawPoints) => {
-          const points = rawPoints.map((p) => ({ ...p, tooltip: p.city, delay }));
-          component.addPoints(points, { spreadDuration });
-        });
-      };
+export const simulationWithDifferentDots = makeStory(conf, {
+  items: [{
+    viewZoom: '2',
+    mode: 'points',
+    points: [blinkingDots[0]],
+  }],
+  simulations: [
+    storyWait(1000, ([component]) => {
+      component.points = [blinkingDots[1]];
+    }),
+    storyWait(1000, ([component]) => {
+      component.points = [blinkingDots[2]];
+    }),
+    storyWait(1000, ([component]) => {
+      component.points = [blinkingDots[3]];
+    }),
+    storyWait(1000, ([component]) => {
+      component.points = [];
+    }),
+  ],
+});
 
-      setTimeoutDom(fetchData, 0, component);
-      setIntervalDom(fetchData, spreadDuration, component);
+export const simulationWithUpdatesOnSameServer = makeStory(conf, {
+  items: [{
+    viewZoom: '2',
+    mode: 'points',
+    points: [{ lat: 48.8, lon: 2.3, enabled: false, tag: 'cc-map-marker-server' }],
+  }],
+  simulations: [
+    storyWait(2000, ([component]) => {
+      component.points = [{ lat: 48.8, lon: 2.3, enabled: true, tag: 'cc-map-marker-server' }];
+    }),
+    storyWait(5000, ([component]) => {
+      component.points = [{ lat: 48.8, lon: 2.3, enabled: false, tag: 'cc-map-marker-server' }];
     }),
   ],
 });
@@ -180,9 +185,11 @@ enhanceStoriesNames({
   loading,
   error,
   errorWithLoadingIndicator,
-  persistentPointsDisplayedAtOnce,
-  persistentPointsDisplayedAtOnceWithTooltips,
-  temporaryPointsBatchDisplayedWithTooltips,
-  simulationWithDotmap,
+  pointsWithDots,
+  pointsWithServers,
+  pointsWithDotsNoTooltips,
+  simulationWithUpdatesOnSameDot,
+  simulationWithDifferentDots,
+  simulationWithUpdatesOnSameServer,
   simulationWithHeatmap,
 });
