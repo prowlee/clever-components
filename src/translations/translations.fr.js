@@ -376,4 +376,6 @@ export const translations = {
   // cc-zone-input
   'cc-zone-input.error': `Une erreur est survenue pendant le chargement des zones.`,
   'cc-zone-input.private-map-warning': `Les zones privées n'apparaissent pas sur la carte.`,
+  // cc-pricing-table
+  'cc-pricing-table.price': ({ price }) => `${currencyFormatter.format(price)}`,
 };

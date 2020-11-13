@@ -363,4 +363,7 @@ export const translations = {
   // cc-zone-input
   'cc-zone-input.error': `Something went wrong while loading zones.`,
   'cc-zone-input.private-map-warning': `Private zones don't appear on the map.`,
+  // cc-pricing-table
+  'cc-pricing-table.price': ({ price }) => `${currencyFormatter.format(price)}`,
+  'cc-pricing-table.bytes': ({ storage }) => formatBytes(storage),
 };

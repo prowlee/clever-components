@@ -1,0 +1,1334 @@
+{
+    "plans": [
+      {
+        "name": "XS Small Space",
+        "price": 17.5,
+        "features": [
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Max DB size",
+            "value": "5 GB"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "vCPUS",
+            "value": "1"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "75"
+          },
+          {
+            "name": "Memory",
+            "value": "1 GB"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "XXS Small Space",
+        "price": 5.25,
+        "features": [
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Max DB size",
+            "value": "1 GB"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "vCPUS",
+            "value": "1"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "45"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "Memory",
+            "value": "512 MB"
+          }
+        ]
+      },
+      {
+        "name": "XL Small Space",
+        "price": 328,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "80 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "8"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "750"
+          },
+          {
+            "name": "Memory",
+            "value": "16 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "XS Big Space",
+        "price": 30,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "15 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "1"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "75"
+          },
+          {
+            "name": "Memory",
+            "value": "1 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "XS Tiny Space",
+        "price": 13,
+        "features": [
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Max DB size",
+            "value": "2 GB"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "75"
+          },
+          {
+            "name": "Memory",
+            "value": "1 GB"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "vCPUS",
+            "value": "1"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "XXL Small Space",
+        "price": 796,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "160 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "10"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "900"
+          },
+          {
+            "name": "Memory",
+            "value": "32 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "XXS Medium Space",
+        "price": 6.8,
+        "features": [
+          {
+            "name": "Max connection limit",
+            "value": "45"
+          },
+          {
+            "name": "Memory",
+            "value": "512 MB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Max DB size",
+            "value": "2 GB"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "vCPUS",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "name": "L Big Space",
+        "price": 204,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "120 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "6"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "500"
+          },
+          {
+            "name": "Memory",
+            "value": "8 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "M Small Space",
+        "price": 82,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "20 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "4"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "250"
+          },
+          {
+            "name": "Memory",
+            "value": "4 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "L Small Space",
+        "price": 164,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "40 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "6"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "500"
+          },
+          {
+            "name": "Memory",
+            "value": "8 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "XXXL Small Space",
+        "price": 1598,
+        "features": [
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Max DB size",
+            "value": "640 GB"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "1200"
+          },
+          {
+            "name": "Memory",
+            "value": "64 GB"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "vCPUS",
+            "value": "12"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "M Big Space",
+        "price": 112,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "80 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "4"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "250"
+          },
+          {
+            "name": "Memory",
+            "value": "4 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "S Huge Space",
+        "price": 55,
+        "features": [
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Max DB size",
+            "value": "50 GB"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "125"
+          },
+          {
+            "name": "Memory",
+            "value": "2 GB"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "vCPUS",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "name": "XXXL Medium Space",
+        "price": 1822,
+        "features": [
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Max DB size",
+            "value": "960 GB"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "1200"
+          },
+          {
+            "name": "Memory",
+            "value": "64 GB"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "vCPUS",
+            "value": "12"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "XXXL Big Space",
+        "price": 1990,
+        "features": [
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Max DB size",
+            "value": "1200 GB"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "1200"
+          },
+          {
+            "name": "Memory",
+            "value": "64 GB"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "vCPUS",
+            "value": "12"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "S Small Space",
+        "price": 35,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "10 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "2"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "125"
+          },
+          {
+            "name": "Memory",
+            "value": "2 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "XXL Huge Space",
+        "price": 1276,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "960 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "10"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "900"
+          },
+          {
+            "name": "Memory",
+            "value": "32 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "XXL Medium Space",
+        "price": 892,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "320 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "10"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "900"
+          },
+          {
+            "name": "Memory",
+            "value": "32 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "S Medium Space",
+        "price": 37.5,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "15 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "2"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "125"
+          },
+          {
+            "name": "Memory",
+            "value": "2 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "M Medium Space",
+        "price": 92,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "40 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "4"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "250"
+          },
+          {
+            "name": "Memory",
+            "value": "4 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "XXL Big Space",
+        "price": 1084,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "640 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "10"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "900"
+          },
+          {
+            "name": "Memory",
+            "value": "32 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "XXS Big Space",
+        "price": 7.7,
+        "features": [
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Max DB size",
+            "value": "3 GB"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "vCPUS",
+            "value": "1"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "Memory",
+            "value": "512 MB"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "45"
+          }
+        ]
+      },
+      {
+        "name": "L Medium Space",
+        "price": 184,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "80 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "6"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "500"
+          },
+          {
+            "name": "Memory",
+            "value": "8 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "XL Medium Space",
+        "price": 368,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "160 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "8"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "750"
+          },
+          {
+            "name": "Memory",
+            "value": "16 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "S Big Space",
+        "price": 40,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "20 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "2"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "125"
+          },
+          {
+            "name": "Memory",
+            "value": "2 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "DEV",
+        "price": 0,
+        "features": [
+          {
+            "name": "Max connection limit",
+            "value": "5"
+          },
+          {
+            "name": "Max DB size",
+            "value": "256 MB"
+          },
+          {
+            "name": "Memory",
+            "value": "Shared"
+          },
+          {
+            "name": "vCPUS",
+            "value": "Shared"
+          },
+          {
+            "name": "Metrics",
+            "value": "No"
+          },
+          {
+            "name": "Type",
+            "value": "Shared"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          },
+          {
+            "name": "Logs",
+            "value": "No"
+          }
+        ]
+      },
+      {
+        "name": "XL Big Space",
+        "price": 448,
+        "features": [
+          {
+            "name": "Max DB size",
+            "value": "320 GB"
+          },
+          {
+            "name": "vCPUS",
+            "value": "8"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "750"
+          },
+          {
+            "name": "Memory",
+            "value": "16 GB"
+          },
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "name": "XS Medium Space",
+        "price": 20,
+        "features": [
+          {
+            "name": "Backups",
+            "value": "Daily - 7 Retained"
+          },
+          {
+            "name": "Logs",
+            "value": "Yes"
+          },
+          {
+            "name": "Max DB size",
+            "value": "10 GB"
+          },
+          {
+            "name": "Max connection limit",
+            "value": "75"
+          },
+          {
+            "name": "Memory",
+            "value": "1 GB"
+          },
+          {
+            "name": "Metrics",
+            "value": "Yes"
+          },
+          {
+            "name": "Migration Tool",
+            "value": "Yes"
+          },
+          {
+            "name": "PostGIS",
+            "value": "Yes"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "vCPUS",
+            "value": "1"
+          }
+        ]
+      }
+    ],
+    "features": [
+      {
+        "name": "vCPUS",
+        "type": "NUMBER"
+      },
+      {
+        "name": "Type",
+        "type": "NUMBER"
+      },
+      {
+        "name": "Migration Tool",
+        "type": "NUMBER"
+      },
+      {
+        "name": "Logs",
+        "type": "NUMBER"
+      },
+      {
+        "name": "Memory",
+        "type": "FILESIZE"
+      },
+      {
+        "name": "PostGIS",
+        "type": "NUMBER"
+      },
+      {
+        "name": "Max connection limit",
+        "type": "NUMBER"
+      },
+      {
+        "name": "Max DB size",
+        "type": "FILESIZE"
+      },
+      {
+        "name": "Backups",
+        "type": "NUMBER"
+      },
+      {
+        "name": "Metrics",
+        "type": "NUMBER"
+      }
+    ]
+}

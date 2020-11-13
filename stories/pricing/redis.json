@@ -1,0 +1,205 @@
+{
+    "plans": [
+      {
+        "name": "S",
+        "price": 8.67,
+        "features": [
+          {
+            "name": "Connection limit",
+            "value": "100"
+          },
+          {
+            "name": "Databases",
+            "value": "100"
+          },
+          {
+            "name": "Size",
+            "value": "100MB"
+          },
+          {
+            "name": "Isolation",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "CPU",
+            "value": "1 vCPU"
+          }
+        ]
+      },
+      {
+        "id": "plan_24b6f0ca-18b8-44af-a9aa-9618a288048a",
+        "name": "XXL",
+        "price": 190.71,
+        "features": [
+          {
+            "name": "Connection limit",
+            "value": "500"
+          },
+          {
+            "name": "Databases",
+            "value": "100"
+          },
+          {
+            "name": "Isolation",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Size",
+            "value": "2500MB"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "CPU",
+            "value": "2 vCPUs"
+          }
+        ]
+      },
+      {
+        "name": "XL",
+        "price": 78.08,
+        "features": [
+          {
+            "name": "Isolation",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Connection limit",
+            "value": "500"
+          },
+          {
+            "name": "Databases",
+            "value": "100"
+          },
+          {
+            "name": "Size",
+            "value": "1000MB"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "CPU",
+            "value": "1 vCPU"
+          }
+        ]
+      },
+      {
+        "name": "M",
+        "price": 13.34,
+        "features": [
+          {
+            "name": "Isolation",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Connection limit",
+            "value": "250"
+          },
+          {
+            "name": "Databases",
+            "value": "100"
+          },
+          {
+            "name": "Size",
+            "value": "250MB"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "CPU",
+            "value": "1 vCPU"
+          }
+        ]
+      },
+      {
+        "name": "XXXL",
+        "price": 250,
+        "features": [
+          {
+            "name": "Connection limit",
+            "value": "500"
+          },
+          {
+            "name": "Databases",
+            "value": "100"
+          },
+          {
+            "name": "Isolation",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Size",
+            "value": "5000MB"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "CPU",
+            "value": "4 vCPUs"
+          }
+        ]
+      },
+      {
+        "name": "L",
+        "price": 43.38,
+        "features": [
+          {
+            "name": "Isolation",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Connection limit",
+            "value": "500"
+          },
+          {
+            "name": "Databases",
+            "value": "100"
+          },
+          {
+            "name": "Type",
+            "value": "Dedicated"
+          },
+          {
+            "name": "Size",
+            "value": "500MB"
+          },
+          {
+            "name": "CPU",
+            "value": "1 vCPU"
+          }
+        ]
+      }
+    ],
+    "features": [
+      {
+        "name": "Isolation"
+      },
+      {
+        "name": "Type"
+      },
+      {
+        "name": "Databases"
+      },
+      {
+        "name": "CPU"
+      },
+      {
+        "name": "Connection limit"
+      },
+      {
+        "name": "Size"
+      }
+    ]
+}
